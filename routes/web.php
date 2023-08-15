@@ -26,7 +26,7 @@ Route::get('/test', function () {
     // return getBrowser();
     $platform = getPlatForm();
     if($platform == "Mac"){
-      return "Mac " . shell_exec("ifconfig en0 | awk '/ether/{print $2}'");
+      return "Mac " . exec("ifconfig en0 | awk '/ether/{print $2}'");
     }elseif($platform == "Linux"){
       return "Mac  " . shell_exec("ifconfig en0 | awk '/ether/{print $2}'");
     }
