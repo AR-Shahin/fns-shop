@@ -25,6 +25,7 @@ require __DIR__.'/auth.php';
 Route::get('/test', function () {
     // return getBrowser();
     $platform = getPlatForm();
+    echo $platform . "<br>";
     if($platform == "Mac"){
       return "Mac " . exec("ifconfig en0 | awk '/ether/{print $2}'");
     }elseif($platform == "Linux"){
