@@ -26,11 +26,11 @@ Route::get('/test', function () {
     // return getBrowser();
     $platform = getPlatForm();
     if($platform == "Mac"){
-      return shell_exec("ifconfig en0 | awk '/ether/{print $2}'");
+      return "Mac " . shell_exec("ifconfig en0 | awk '/ether/{print $2}'");
     }elseif($platform == "Linux"){
-      return shell_exec("ifconfig en0 | awk '/ether/{print $2}'");
+      return "Mac  " . shell_exec("ifconfig en0 | awk '/ether/{print $2}'");
     }
-    return shell_exec("ifconfig en0 | awk '/ether/{print $2}'"); // Mac
+   // return shell_exec("ifconfig en0 | awk '/ether/{print $2}'"); // Mac
     //return $mac = shell_exec("ip link | awk '{print $2}'"); // Linux
         // preg_match_all('/([a-z0-9]+):\s+((?:[0-9a-f]{2}:){5}[0-9a-f]{2})/i', $mac, $matches);
         // $output = array_combine($matches[1], $matches[2]);
